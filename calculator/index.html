@@ -1,38 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+ 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <title>Simple Calculator using HTML, CSS and JavaScript</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+ 
 <body>
-    
-    <h1>Taking user input</h1>
-
-    <form onsubmit="doSum(); return false">
-        num1: <input id="num1" type="number" required>
-        <br>
-        num2: <input id="num2" type="number" required>
-        <br>
-        <button type="submit">Sum</button>
-    </form>
-    <h3 id="result">     </h3>
-
-
-<script>
-    function doSum() {
-            let firstNumber = Number(document.querySelector("#num1").value)
-            let secondNumber = +document.querySelector("#num2").value
-
-            console.log(firstNumber, secondNumber)
-
-            let sum = firstNumber + secondNumber;
-
-            document.querySelector("#result").innerHTML = sum;
-        }
-    
-    </script>
-
+ 
+<table class="calculator" >
+  <tr>
+    <td colspan="3"> <input class="display-box" type="text" id="result" disabled /> </td>
+ 
+    <!-- clearScreen() function clears all the values -->
+    <td> <input type="button" value="C" onclick="clearScreen()" id="btn" /> </td>
+  </tr>
+  <tr>
+    <!-- display() function displays the value of clicked button -->
+    <td> <input type="button" value="1" onclick="display('1')" /> </td>
+    <td> <input type="button" value="2" onclick="display('2')" /> </td>
+    <td> <input type="button" value="3" onclick="display('3')" /> </td>
+    <td> <input type="button" value="/" onclick="display('/')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" value="4" onclick="display('4')" /> </td>
+    <td> <input type="button" value="5" onclick="display('5')" /> </td>
+    <td> <input type="button" value="6" onclick="display('6')" /> </td>
+    <td> <input type="button" value="-" onclick="display('-')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" value="7" onclick="display('7')" /> </td>
+    <td> <input type="button" value="8" onclick="display('8')" /> </td>
+    <td> <input type="button" value="9" onclick="display('9')" /> </td>
+    <td> <input type="button" value="+" onclick="display('+')" /> </td>
+  </tr>
+  <tr>
+    <td> <input type="button" value="." onclick="display('.')" /> </td>
+    <td> <input type="button" value="0" onclick="display('0')" /> </td>
+ 
+    <!-- calculate() function evaluates the mathematical expression -->
+    <td> <input type="button" value="=" onclick="calculate()" id="btn" /> </td>
+    <td> <input type="button" value="*" onclick="display('*')" /> </td>
+  </tr>
+</table>
+ 
+<script type="text/javascript" src="script.js"></script>
+ 
 </body>
+ 
 </html>
